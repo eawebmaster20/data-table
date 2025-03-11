@@ -1,0 +1,81 @@
+.skeleton {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 4px;
+  }
+  
+  @keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+//   .container {
+//     display: flex;
+//     width: 100%;
+//     flex-direction: column;
+
+//     .filter{
+//         display: flex;
+//         width: 300px;
+//         margin-left: auto;
+//     }
+//   }
+//   .mat-mdc-table {
+//     width: 100%;
+//     max-height: 500px;
+//     overflow: auto;
+//   }
+
+//   .mat-header-cell {
+//     background: white;
+//     z-index: 1000;
+//     position: sticky;
+//     top: 0;
+//   }
+  
+
+.border{
+    border: 1px solid rgb(63, 51, 121);
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .filter {
+    width: 300px;
+    margin-left: auto;
+  }
+  
+  /* Wrap the table in a scrollable div */
+  .table-container {
+    max-height: 500px; 
+    overflow: auto;
+  }
+  
+  /* Ensure table has 100% width */
+  .mat-mdc-table {
+    width: 100%;
+  }
+  
+  /* Make header sticky */
+  .mat-mdc-header-row {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1000;
+    display: flex;
+  }
+  
+  .mat-mdc-header-cell {
+    background: white;
+    z-index: 1000;
+  }
+  

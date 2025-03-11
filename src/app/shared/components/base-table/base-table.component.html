@@ -1,0 +1,62 @@
+<div class="container border">
+    <mat-form-field *ngIf="showSearch" class="filter">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" [(ngModel)]="searchTerm">
+    </mat-form-field>
+  
+    <!-- Wrap table inside a scrollable div -->
+    <div class="table-container">
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Select Checkbox Column -->
+      <!-- <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="toggleSelectAll($event)" [checked]="isAllSelected()"></mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-checkbox (change)="toggleSelection(element)" [checked]="selectedRows.has(element)"></mat-checkbox>
+        </mat-cell>
+      </ng-container> -->
+
+        <ng-container *ngFor="let col of (tableColumns)" [matColumnDef]="col">
+          <mat-header-cell *matHeaderCellDef> 
+            <span *ngIf="col !== 'select'">
+                {{ col }} 
+            </span>
+            <span *ngIf="enableSelect && col ==='select'">
+                <mat-checkbox (change)="toggleSelectAll($event)" [checked]="isAllSelected()"></mat-checkbox>
+            </span>
+        </mat-header-cell>
+          <mat-cell *matCellDef="let element" [ngSwitch]="getDataType(element[col])">
+            @if (isLoading) {
+                <div class="skeleton"></div>
+            } @else{
+                <div *ngIf="!isLoading">
+                    <div *ngIf="col !== 'select'">
+                        <ng-container *ngSwitchCase="'object'">
+                            <ng-container *ngIf="element[col] !== null; else nullObject">
+                            <button mat-raised-button color="accent" class="object-btn" (click)="openObjectViewer(element[col])">
+                                View Object
+                            </button>
+                            </ng-container>
+                        </ng-container>
+                        <ng-container *ngSwitchDefault>
+                            <span>{{element[col]}}</span>
+                        </ng-container>
+                    </div>
+                    <div *ngIf="col === 'select' && enableSelect">
+                        <mat-checkbox (change)="toggleSelection(element)" [checked]="selectedRows.has(element)"></mat-checkbox>
+                    </div>
+                </div>
+            }
+          </mat-cell>
+        </ng-container>
+        <ng-template #nullObject>
+            <span></span>
+          </ng-template>
+        <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: tableColumns;"></mat-row>
+      </mat-table>
+    </div>
+    <mat-paginator [pageSizeOptions]="pageSizeOptions" aria-label="Select page of users"></mat-paginator>
+  </div>
+  
