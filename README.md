@@ -1,27 +1,57 @@
-# DataTable
+# DataTable Component
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This Angular coding challenge requires you to build a data table component that fetches data from an API endpoint and displays it in a well-structured table. The component must handle loading states and error conditions gracefully.
 
-## Code scaffolding
+## Problem Statement
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Build a data table component that:
+- Fetches data from an API using Angular’s HttpClientModule.
+- Displays the fetched data in a table using the *ngFor directive.
+- Implements a loading state while data is being fetched.
+- Implements error handling for failed API requests.
 
-## Build
+## Requirements
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Core Functionality
+- **Data Fetching:** Use Angular’s HttpClientModule to retrieve data from an API endpoint of your choice.
+- **Data Display:** Render the fetched data in a table using *ngFor.
+- **Loading State:** Show a loading indicator while the data is being fetched.
+- **Error Handling:** Gracefully handle errors if the API request fails.
 
-## Running unit tests
+### Technical Requirements
+- **Reusable Component:** Create a reusable data table component.
+- **Styling:** Implement basic styling (CSS/SCSS) to ensure the table is readable.
+- **API Communication:** Use Angular services to manage API calls and data handling.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Bonus Points (Optional)
+- **Sorting:** Add sorting functionality to the table columns.
+- **Filtering:** Implement basic filtering capability.
+- **Pagination:** Add pagination or a “Load More” functionality.
 
-## Running end-to-end tests
+### Evaluation Criteria
+- **Code Quality & Organization:** Clean, well-organized code using proper Angular concepts.
+- **Error Handling:** Effective and graceful error management.
+- **Component Design:** Reusability and clarity in the design of the data table component.
+- **UI/UX Considerations:** A user-friendly interface with clear loading and error states.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Setup Instructions
 
-## Further help
+1. **Clone the repository:**
+   ```bash
+   git clone <repository_url>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. **Clone the repository:**
+   ```bash
+   cd data-table
+   
+3. **Clone the repository:**
+   ```bash
+   npm install
+
+4. **Run project:**
+   ```bash
+   npm start
