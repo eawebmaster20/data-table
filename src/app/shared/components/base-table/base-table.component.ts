@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { BaseModalComponent } from '../base-modal/base-modal.component';
 import { MatButtonModule } from '@angular/material/button';
-
+import  {tableData}  from '../../../core/services/api/test-data/base-table-data'
 
 
 

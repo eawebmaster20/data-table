@@ -1,4 +1,4 @@
-const tableData = [
+export const tableData = [
     {
         "id": 1,
         "name": "Leanne Graham",
